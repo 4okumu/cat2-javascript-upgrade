@@ -1,0 +1,6 @@
+COMPLETED TASKS
+Task 1: Dynamic loops- Used an array (.forEach and document.createElement) to insert products to the DOM grid dynamically
+Task 2: DOM Element Removal- Added event listeners to the wishlist buttons using native .remove() to clear list nodes
+Task 3: Form handling and validation- Built input text string to check with field sanitisation
+Task 4: LocalStorage- Integrated JSON data transformation state items to cache and hydrate the custom wardrobe items seamlessly across refreshes
+Task 5: Interactive Banner- .classList.toggle("hidden") on a core graphic element click listener to show/hide text content
