@@ -60,7 +60,7 @@ if (wishlistForm) {
     });
 }
 
-const feedbackForm = document.querySelector("#feedbackForm");
+const feedbackForm = document.querySelector("#feedbackform");
 const feedbackOutput = document.querySelector("#feedbackOutput");
 
 if (feedbackForm) {
@@ -79,5 +79,14 @@ if (feedbackForm) {
         feedbackOutput.innerHTML = "<b> Thank you for your feedback!</b>"
 
         feedbackForm.reset();
+    });
+}
+
+const bannerImage = document.querySelector("#banner");
+const bannerCaption = document.querySelector("#bannerCaption");
+if (bannerImage && bannerCaption) {
+    bannerImage.addEventListener("click", () => {
+        bannerCaption.classList.toggle("hidden");
+        console.log("Banner caption toggled");
     });
 }
