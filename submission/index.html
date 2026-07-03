@@ -7,7 +7,7 @@
     <link rel="stylesheet" href= "css/styles.css">
 </head>
 <body>
-
+    
     <header>
 
     <h1>Welcome to Obare Beauter's Small Clothes Seller</h1>
@@ -17,6 +17,7 @@
         <ul>
             <li><a href = "#about">About Me</a></li>
             <li><a href= "#services">Products</a></li>
+            <li><a href = "#wishlist-section"> My Wishlist</a></li>
             <li><a href= "#gallery">Gallery</a></li>
             <li><a href= "#contact">Contact</a></li>
 
@@ -32,10 +33,17 @@
             <h2>Your One-Stop Shop for Stylish Clothes</h2>
         </section>
 
+        
+            <div class = "banner-wrapper">
+                <img id = "banner" src = "images/banner.jpeg" alt = "Banner Image">
+                <p id = "bannerCaption" class = "banner-caption hidden">Discover the Latest Trends in Fashion!</p>
+            </div>
+            
+
         <section id = "about" name = "about">
             <h2>About Me</h2>
             <p>
-                <i> Hello, I'm Eugo, a passionate small clothes seller dedicated to providing stylish and affordable clothing options for everyone. With a keen eye for fashion and a commitment to quality, I strive to bring you the latest trends and timeless pieces that fit your unique style. </i>
+                <i> Hello, I'm Beauter, a passionate small clothes seller dedicated to providing stylish and affordable clothing options for everyone. With a keen eye for fashion and a commitment to quality, I strive to bring you the latest trends and timeless pieces that fit your unique style. </i>
             </p>
         </section>
 
@@ -69,6 +77,21 @@
                 </div>
                 
             </div>
+
+            <h3 class = "section-subtitle" > New Arrivals </h3>
+            <div id = "dynamic-products-grid" class = "products-grid dynamic-grid"></div>
+        </section>
+
+        <section id = "wishlist-section" class = "wishlist-container">
+            <h2> My Shopping Wishlist </h2>
+            <p class = "wishlist-description"> Add your desired products to your wishlist for easy access later.</p>
+
+            <form id = "wishlistForm" class = "wishlist-form">
+                <input type = "text" id = "wishlistInput" placeholder = "Enter a product" class = "wishlist-input">
+                <button type = "submit" class = "wishlist-btn"> Add Item to wishlist </button>
+            </form>
+
+            <ul id = "wishlistItems"></ul>
         </section>
 
         <section id = "gallery">
@@ -88,6 +111,23 @@
             <p> For inquiries, please contact me at: 0758629967 </p>
             <p>Location: Ngumo, Kenya</p>
 
+            <form id = "feedbackform" class = "contact-form">
+                <div class = "form-group">
+                    <label for = "fanName">Name:</label>
+                    <input type = "text" id = "fanName">
+                </div>
+                <div class = "form-group">
+                    <label for = "fanEmail">Email:</label>
+                    <input type = "email" id = "fanEmail">
+                </div>
+                <div class = "form-group">
+                    <label for = "fanMessage">Message:</label>
+                    <textarea id = "fanMessage"></textarea>
+                </div>
+                <button type = "submit" class = "contact-btn">Send Message</button>
+            </form> 
+
+            <div id = "feedbackOutput"></div>
         </section>
     </main>
 
@@ -95,6 +135,6 @@
         <hr>
         <p> © 2026 Obare Beauter - Small Clothes Seller. All rights reserved.</p>
     </footer>
-
+    <script src = "js/script.js"></script>  
 </body>
 </html>
