@@ -59,3 +59,25 @@ if (wishlistForm) {
         }
     });
 }
+
+const feedbackForm = document.querySelector("#feedbackForm");
+const feedbackOutput = document.querySelector("#feedbackOutput");
+
+if (feedbackForm) {
+    feedbackForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const clientName = document.querySelector("#fanName").value.trim();
+        const clientEmail = document.querySelector("#fanEmail").value.trim();
+        const clientMessage = document.querySelector("#fanMessage").value.trim();
+        if (clientName === "" || clientEmail === "" || clientMessage === "") {
+            feedbackOutput.className = "error";
+            feedbackOutput.innerHTML = "Please fill in all fields.";
+            return;
+        }
+
+        feedbackOutput.className = "success";
+        feedbackOutput.innerHTML = "<b> Thank you for your feedback!</b>"
+
+        feedbackForm.reset();
+    });
+}
