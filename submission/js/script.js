@@ -20,3 +20,42 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
 
 });
+
+const wishlistForm = document.querySelector("#wishlistForm");
+const wishlistInput = document.querySelector("#wishlistInput");
+const wishlistItemsContainer = document.querySelector("#wishlistItems");
+
+let storedWishlist = JSON.parse(localStorage.getItem("Obare_wishlist")) || [];
+function renderWishlist(itemText){
+    const li = document.createElement("li");
+    li.textContent = itemText;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", () => {
+        li.remove();
+        storedWishlist = storedWishlist.filter(item => item !== itemText);
+        localStorage.setItem("Obare_wishlist", JSON.stringify(storedWishlist));
+    });
+    li.appendChild(deleteBtn);
+    wishlistItemsContainer.appendChild(li);
+}
+
+storedWishlist.forEach(item => renderWishlist(item));
+if (wishlistForm) {
+    wishlistForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const taskInputClean = wishlistInput.value.trim();
+        if (taskInputClean !=="") {
+            if (!storedWishlist.includes(taskInputClean)){
+                storedWishlist.push(taskInputClean);
+                localStorage.setItem("Obare_wishlist", JSON.stringify(storedWishlist));
+                renderWishlist(taskInputClean);
+                wishlistInput.value = "";
+            } else {
+                alert("Item already exists in the wishlist.");
+            }
+        } else {
+            alert("Please enter a valid item.");
+        }
+    });
+}
